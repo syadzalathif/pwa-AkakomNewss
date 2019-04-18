@@ -1,0 +1,48 @@
+<!-- 
+	File ini merupakan template tampilan untuk berbagai konten yang akan diproses
+-->
+
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8"/>
+   <title>My First PWA</title>
+   <meta name="description" content="My first PWA"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/materialize.css">
+ </head> 
+ <body>
+ 
+   <!-- Navigasi 
+		Berfungsi untuk membuat elemen navigasi
+	-->
+   <nav class="teal lighten-1" role="navigation">
+     <div class="nav-wrapper container">
+       <a href="#" class="brand-logo" id="logo-container">My App</a> 
+       <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a> 
+       
+       <ul class="topnav right hide-on-med-and-down"></ul>
+       <ul class="sidenav" id="nav-mobile"></ul>
+     </div>
+   </nav>
+   <!-- Akhir Navigasi -->
+   <div class="container" id="body-content"></div>
+ 
+ 	<!--
+ 		Akan memanggil JS, termasuk JS untuk elemen navigasi
+ 	-->
+   <script src="js/materialize.min.js"></script>
+   <script src="js/nav.js"></script>
+   <script>
+    if  ('serviceWorker'  in  navigator)  {
+      navigator.serviceWorker.register('sw-akakomnews.js')
+      .then(function(registration)  {
+          console.log('Registered:',  registration);
+      })
+      .catch(function(error)  {
+          console.log('Registration failed: ',  error);
+      });
+    }
+   </script>
+ </body>
+ </html> 
